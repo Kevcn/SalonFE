@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from '../logo.svg';
-import '../App.css';
+import DateSelector from './dateSelection/DateSelector'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import TimeSlotSelector from './timeSelection/TimeSlotSelector';
+export default class App extends React.Component {
+
+  // Book button
+  render(){
+    return (
+      <div>
+          <Router>         
+              <Route path='/' component={DateSelector} exact/>
+              <Route path='/timeslots' component={TimeSlotSelector} exact/>
+          </Router>
+      </div>      
+    );
+  }
 }
 
-export default App;

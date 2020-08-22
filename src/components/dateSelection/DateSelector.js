@@ -1,27 +1,25 @@
 import logo from '../../logo.svg';
 import '../../App.css';
 
-import React from 'react';
-import axios from 'axios';
-import SingleDate from './SingleDate';
+import React, {useState} from 'react';
 
-export default class DateSelector extends React.Component {
-    
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
+export default class DateSelector extends React.Component {    
     state = {
-        dayAvailability: []
+        selectedDate: new Date()
     }
 
-    // TODO: Get date = date now
-    async componentDidMount() {
-        const response = await axios.get(`http://localhost:8080/api/v1/GetDayavailability/2020-08-13`)        
-
+    handleChange = (date) => {
         this.setState({
-            dayAvailability: response.data
+            selectedDate: date
         })
+    }
 
-        console.log(response);
-    };    
-
+    handleSelect =(date) => {
+        console.log(date);
+    }
 
     render(){
         return (
@@ -30,9 +28,18 @@ export default class DateSelector extends React.Component {
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
                 Date selection page
-                </p>               
+                </p>
+                {/* {this.state.dayAvailability.map(availability => <SingleDate key={availability.date} {...availability}/>)} */}
 
-                {this.state.dayAvailability.map(availability => <SingleDate key={availability.date} {...availability}/>)}
+                <DatePicker 
+                    selected={this.state.selectedDate} 
+                    onChange={this.handleChange}
+                    onSelect={this.handleSelect}
+                    dateFormat='MM/dd'
+                    minDate = {new Date()}
+
+                    />
+                
             </header>
         </div>
         )

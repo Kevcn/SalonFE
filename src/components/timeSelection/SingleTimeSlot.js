@@ -1,42 +1,49 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import styled from 'styled-components';
-
-const TimeSlotBlock = styled.div`
-  background: #66ffc2;
-  padding: 2%;
-  margin: 0.5%;
-  width: 40%;
-`
 
 export default class SingleTimeSlot extends React.Component {
-    
+        
     componentDidMount(){
         console.log(this.props)
     }
     
-    // TODO: available is coming through, disbale button if it is not available
-
     render(){
         const availability = this.props;
         
-        const month = availability.date.split('T')[0].split('-')[1];
-        const day = availability.date.split('T')[0].split('-')[2];
+        const available = availability.available ?
+            "transparent" :
+            "#a3a3c2";
 
-        const available = availability.available ? "Book" : "Full";
+        const disableButton = availability.available ?
+             "auto" :
+             "none";
+
+        const timeSlotLabels = [
+            "11:00", "11:30", 
+            "12:00", "12:30",
+            "13:00", "13:30", 
+            "14:00", "14:30", 
+            "15:00", "15:30", 
+            "16:00", "16:30", 
+            "17:00", "17:30", 
+            "18:00", "18:30"
+        ];
+
         return (
-            <TimeSlotBlock>
-                <div>{availability.timeSlotID}</div>
-                <div>{availability.available}</div>
-                <Link to={{ 
+            <section class="TimeSlotBlock">
+                <Link to={{
                     pathname: '/book',
-                    appointmentTime: { 
-                        date: availability.date, 
+                    appointmentTime: {
+                        date: availability.date,
                         timeSlotID: availability.timeSlotID,
-                        timeSlotLabel: "temptimeslotLabel"}
-                        }}>
+                        timeSlotLabel: timeSlotLabels[availability.timeSlotID - 1]}
+                        }}
+                        className="button"
+                        style={{textDecoration: "none", background: available, pointerEvents: disableButton}}
+                        >
+                            {timeSlotLabels[availability.timeSlotID - 1]}
                 </Link>
-            </TimeSlotBlock>
+            </section>
         )
     }
 }

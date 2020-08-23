@@ -2,6 +2,7 @@ import logo from '../../logo.svg';
 import '../../App.css';
 
 import React, {useState} from 'react';
+import { withRouter  } from 'react-router-dom';
 
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -19,6 +20,10 @@ export default class DateSelector extends React.Component {
 
     handleSelect =(date) => {
         console.log(date);
+        this.props.history.push({
+            pathname: "/timeslots",
+            date: date
+        });
     }
 
     render(){
@@ -29,15 +34,13 @@ export default class DateSelector extends React.Component {
                 <p>
                 Date selection page
                 </p>
-                {/* {this.state.dayAvailability.map(availability => <SingleDate key={availability.date} {...availability}/>)} */}
-
                 <DatePicker 
                     selected={this.state.selectedDate} 
                     onChange={this.handleChange}
                     onSelect={this.handleSelect}
-                    dateFormat='MM/dd'
-                    minDate = {new Date()}
-
+                    dateFormat='MM-dd'
+                    inline
+                    // minDate = {new Date()}
                     />
                 
             </header>

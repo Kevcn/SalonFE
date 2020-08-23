@@ -1,9 +1,11 @@
 import React from 'react';
 import DateSelector from './dateSelection/DateSelector'
 
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import TimeSlotSelector from './timeSelection/TimeSlotSelector';
 import BookingForm from './bookAppointment/BookingForm';
+import Navbar from './Nav/Navbar';
+import HomePage from './home/HomePage';
 
 export default class App extends React.Component {
 
@@ -12,11 +14,15 @@ export default class App extends React.Component {
     return (
       // frame - header, 
       // route for home page to display static details
-      <div>
+      <div className="AppContainer">
           <Router>
+            <Navbar />
+            <Switch>
+              <Route path='/' component={HomePage} exact/>
               <Route path='/dateselector' component={DateSelector} exact/>
               <Route path='/timeslots' component={TimeSlotSelector} exact/>
               <Route path='/book' component={BookingForm} exact/>
+            </Switch>              
           </Router>
       </div>      
     );

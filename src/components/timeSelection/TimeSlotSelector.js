@@ -2,27 +2,24 @@ import React from 'react';
 import axios from 'axios';
 import SingleTimeSlot from './SingleTimeSlot';
 
-import styled from 'styled-components';
-
-const TimeSlotsContainer = styled.div`
-    margin: 0 auto;
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-`
-
 export default class TimeSlotSelector extends React.Component {
 
-    // From SingleDate button
-
     state = {
-        timeSlotAvailability: []
+        timeSlotAvailability: [],
+        month: [],
+        day: []
     }
 
-    // TODO: Get date = from props
     async componentDidMount() {
-        const queryDate = this.props.location.timeSlotDate.date;
+       
+        const year = this.props.location.date.getFullYear();
+        const month = this.props.location.date.getMonth() + 1;
+        const day = this.props.location.date.getDate();
+
+        const queryDate = [year, month, day].join('-');
+
+        console.log(queryDate);
+
         const response = await axios.get(`http://localhost:8080/api/v1/GetTimeavailability/${queryDate}`)        
 
         var responseData = response.data;
@@ -30,13 +27,13 @@ export default class TimeSlotSelector extends React.Component {
             responseData[i] = { ...responseData[i], date: queryDate}            
         }
 
-        // console.log(responseData);       
-        // console.log(queryDate);
-
         this.setState({
-            timeSlotAvailability: responseData
+            timeSlotAvailability: responseData,
+            month: month,
+            day: day
         })
         console.log(this.state.timeSlotAvailability);
+
     };   
 
     render(){
@@ -44,9 +41,12 @@ export default class TimeSlotSelector extends React.Component {
         return (
             <div>
                 <p>Time slot selector</p>
-                <TimeSlotsContainer>
+                <h2>Month - {this.state.month}</h2>
+                <h2>Day - {this.state.day}</h2>
+
+                <div class="TimeslotContainer">
                     {this.state.timeSlotAvailability.map(availability => <SingleTimeSlot key={availability.timeSlotID} {...availability}/>)}
-                </TimeSlotsContainer>               
+                </div>             
             </div>
         )
     }

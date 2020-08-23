@@ -1,3 +1,17 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: sans-serif;
+  font-size: 16px;
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: #f4f7f6;
+
+
+}
+
 .App {
   text-align: center;
 }
@@ -27,6 +41,105 @@
 .App-link {
   color: #61dafb;
 }
+
+/* ----------------- Start ----------------- */
+/* Generic*/
+.button {
+  border-radius: 0;
+  color: #3a5dae;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-transition: color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #3a5dae;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  justify-content: center;
+  width: 200px;
+}
+
+  .button:hover {
+    color: #fff;
+    font-weight: 1000;
+    background: #3a5dae !important;
+  }
+
+.Header {
+  width: 100%;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.SubHeader {
+  width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+/*Home Page*/
+.HomePageContainer {
+  background: bisque;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+  .BookingButtonContainer,
+  .ServiceContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;    
+  }
+
+
+
+
+/*timeslot picker*/
+
+.TimeslotContainer {
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+  .TimeSlotBlock {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    max-width: 200px;
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 @keyframes App-logo-spin {
   from {

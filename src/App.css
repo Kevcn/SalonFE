@@ -1,9 +1,41 @@
+@font-face {
+  font-family: 'arimobold';
+  src: url('fonts/arimo-bold-webfont.woff2') format('woff2'),
+       url('fonts/arimo-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'arimobold_italic';
+  src: url('fonts/arimo-bolditalic-webfont.woff2') format('woff2'),
+       url('fonts/arimo-bolditalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'arimoitalic';
+  src: url('fonts/arimo-italic-webfont.woff2') format('woff2'),
+       url('fonts/arimo-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'arimoregular';
+  src: url('fonts/arimo-regular-webfont.woff2') format('woff2'),
+       url('fonts/arimo-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 
-  font-family: sans-serif;
+  font-family: arimobold, sans-serif;
   font-size: 16px;
   max-width: 1920px;
   margin: 0 auto;
@@ -93,16 +125,24 @@ body {
   margin: 0;
 }
 
+.list {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+
 
 /*Home Page*/
 .HomePageContainer {
-  background: bisque;
+  background: transparent;  /*bisque;*/
   display: flex;
   flex-wrap: wrap;
 }
 
   .BookingButtonContainer,
-  .ServiceContainer {
+  .ServiceContainer,
+  .OpeningHoursContainer,
+  .ContactUsContainer {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -110,6 +150,36 @@ body {
     text-align: center;    
   }
 
+.ServiceDetails {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+  .ServiceSection {
+    flex: 1 1 700px;
+    flex: 0 1 700px;
+    margin: 5px;
+    /* background-color: #d1d1e0; */
+  }
+
+    .ServiceSection ul {
+      padding-left: 20px;
+    }
+
+    .SectionHeader {
+      width: 70%;
+      margin: 0 10px;
+      text-align: left;
+      padding: 10px 10px 0 10px;
+      border-bottom: 1px solid #282c34;
+    }
+
+    .ServiceSection li {
+      padding: 5px;
+
+    }
 
 
 

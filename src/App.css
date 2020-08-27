@@ -39,8 +39,8 @@ body {
   font-size: 16px;
   max-width: 1920px;
   margin: 0 auto;
-  background-color: #f4f7f6;
-
+  background-color: #eeeeee;
+  color: #222831;
 
 }
 
@@ -78,7 +78,7 @@ body {
 /* Generic*/
 .button {
   border-radius: 0;
-  color: #3a5dae;
+  color: #1e8a81;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -89,7 +89,7 @@ body {
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
-  border: 2px solid #3a5dae;
+  border: 2px solid #1e8a81;
   cursor: pointer;
   display: flex;
   align-self: center;
@@ -108,13 +108,14 @@ body {
   .button:hover {
     color: #fff;
     font-weight: 1000;
-    background: #3a5dae !important;
+    background: #1e8a81 !important;
   }
 
 .Header {
   width: 100%;
   font-size: 36px;
   font-weight: 700;
+  color: #1e8a81;
   margin: 0;
 }
 
@@ -137,6 +138,7 @@ body {
   background: transparent;  /*bisque;*/
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
   .BookingButtonContainer,
@@ -147,33 +149,40 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    text-align: center;    
+    text-align: center;
+    max-width: 1500px;
+    margin-bottom: 50px;
   }
 
 .ServiceDetails {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
   .ServiceSection {
-    flex: 1 1 700px;
-    flex: 0 1 700px;
+    flex: 1 1 500px;
+    flex: 0 1 500px;
     margin: 5px;
-    /* background-color: #d1d1e0; */
+    margin-bottom: 20px;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    flex-wrap: wrap;
+
   }
 
     .ServiceSection ul {
-      padding-left: 20px;
+      margin-left: 10%;
     }
 
     .SectionHeader {
-      width: 70%;
-      margin: 0 10px;
-      text-align: left;
-      padding: 10px 10px 0 10px;
-      border-bottom: 1px solid #282c34;
+      border: 1px solid #222831;
+      padding-top: 10px;
+      padding-bottom: 5px;
+      opacity: 0.7;
+      margin: 0 10%;
     }
 
     .ServiceSection li {

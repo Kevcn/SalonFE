@@ -1,4 +1,13 @@
 import React from 'react';
+import Straightening from '../../images/StraighteningHeader.png'
+import Gents from '../../images/GentsHeader.png'
+import Colouring from '../../images/ColouringHeader.png'
+import Highlight from '../../images/HighlightHeader.png'
+import Ladies from '../../images/LadiesHeader.png'
+import Perm from '../../images/PermHeader.png'
+import Treatments from '../../images/TreatmentsHeader.png'
+
+
 
 export default class ProvidedServices extends React.Component {
     
@@ -9,16 +18,20 @@ export default class ProvidedServices extends React.Component {
           <div className="ServiceDetails">
 
             <div className="ServiceSection">
-                <h4 className="SectionHeader">GENTS</h4>
+                <div className="SectionHeader">
+                    <img src={Gents} />
+                </div>                
                 <ul className="list">
                     <li>Short</li>
                     <li>Clipper</li>
                     <li>Clipper + Scissors</li>
-                </ul>
+                </ul>                
             </div>
 
             <div className="ServiceSection">
-                <h4 className="SectionHeader">LADIES</h4>
+                <div className="SectionHeader">
+                    <img src={Ladies} />
+                </div>
                 <ul className="list">
                     <li>Short</li>
                     <li>Long</li>
@@ -27,7 +40,9 @@ export default class ProvidedServices extends React.Component {
             </div>
 
             <div className="ServiceSection">
-                <h4 className="SectionHeader">STRAIGHTENING</h4>
+                <div className="SectionHeader">
+                    <img src={Straightening} />
+                </div>
                 <ul className="list">
                     <li>Short</li>
                     <li>Long</li>
@@ -36,7 +51,9 @@ export default class ProvidedServices extends React.Component {
             </div>
 
             <div className="ServiceSection">
-                <h4 className="SectionHeader">PERM</h4>
+                <div className="SectionHeader">
+                    <img src={Perm} />
+                </div>
                 <ul className="list">
                     <li>Short</li>
                     <li>Long</li>
@@ -45,7 +62,9 @@ export default class ProvidedServices extends React.Component {
             </div>
 
             <div className="ServiceSection">
-                <h4 className="SectionHeader">COLOURING</h4>
+                <div className="SectionHeader">
+                    <img src={Colouring} />
+                </div>
                 <ul className="list">
                     <li>Short</li>
                     <li>Long</li>
@@ -54,7 +73,9 @@ export default class ProvidedServices extends React.Component {
             </div>
 
             <div className="ServiceSection">
-                <h4 className="SectionHeader">HIGHLIGHT with foils/with cap</h4>
+                <div className="SectionHeader">
+                    <img src={Highlight} />
+                </div>
                 <ul className="list">
                     <li>Short</li>
                     <li>Long</li>
@@ -63,7 +84,9 @@ export default class ProvidedServices extends React.Component {
             </div>
 
             <div className="ServiceSection">
-                <h4 className="SectionHeader">TREATMENTS</h4>
+                <div className="SectionHeader">
+                    <img src={Treatments} />
+                </div>
                 <ul className="list">
                     <li>Short</li>
                     <li>Long</li>

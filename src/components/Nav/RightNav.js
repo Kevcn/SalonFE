@@ -5,9 +5,11 @@ const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
+  padding: 0;
+  margin: 0;
 
   li {
-    padding: 18px 10px;
+    padding: 10px 30px;
   }
 
   @media (max-width: 768px) {
@@ -29,15 +31,22 @@ const Ul = styled.ul`
   }
 `;
 
+const DIV = styled.div`
+  /* background: antiquewhite; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`;
+
 const RightNav = ({ open }) => {
   return (
-    <Ul open={open}>
-      <li>Home</li>
-      <li>About Us</li>
-      <li>Contact Us</li>
-      <li>Sign In</li>
-      <li>Sign Up</li>
-    </Ul>
+    <DIV>
+      <Ul open={open}>
+        <li>HOME</li>
+        <li>SERVICES</li>
+        <li>CONTACT US</li>
+      </Ul>
+    </DIV>    
   )
 }
 

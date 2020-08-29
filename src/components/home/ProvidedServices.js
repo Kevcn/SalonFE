@@ -1,36 +1,75 @@
 import React from 'react';
-import Straightening from '../../images/StraighteningHeader.png'
-import Gents from '../../images/GentsHeader.png'
-import Colouring from '../../images/ColouringHeader.png'
-import Highlight from '../../images/HighlightHeader.png'
-import Ladies from '../../images/LadiesHeader.png'
-import Perm from '../../images/PermHeader.png'
-import Treatments from '../../images/TreatmentsHeader.png'
-
-
+import headerIcon from '../../images/align-right-solid.svg';
 
 export default class ProvidedServices extends React.Component {
     
     render(){
       return (
         <div className="ServiceContainer">
-          <p className="Header">Services</p>
-          <div className="ServiceDetails">
+            <div className="flexbox HeaderContainer">
+                <img src={headerIcon} className="headerIcon"></img>
+                <p className="Header">SERVICES</p>
+            </div>            
+            <div className="ServiceDetails">
 
             <div className="ServiceSection">
                 <div className="SectionHeader">
-                    <img src={Gents} />
+                    <span>GENTS</span>
                 </div>                
                 <ul className="list">
-                    <li>Short</li>
-                    <li>Clipper</li>
-                    <li>Clipper + Scissors</li>
+                    <li>Short <span>£20</span></li>
+                    <li>Clipper <span>£15</span></li>
+                    <li>Clipper + Scissors <span>£17</span></li>
                 </ul>                
             </div>
 
             <div className="ServiceSection">
                 <div className="SectionHeader">
-                    <img src={Ladies} />
+                    <span>LADIES</span>
+                </div>
+                <ul className="list">
+                    <li>Short <span>£22</span></li>
+                    <li>Long <span>£25</span></li>
+                    <li>Extra long <span>£28</span></li>
+                </ul>
+            </div>
+
+            <div className="ServiceSection">
+                <div className="SectionHeader">
+                    <span>STRAIGHTENING</span>
+                </div>
+                <ul className="list">
+                    <li>Short <span>£100</span></li>
+                    <li>Long <span>£125</span></li>
+                    <li>Extra long <span>£150</span></li>
+                </ul>
+            </div>
+
+            <div className="ServiceSection">
+                <div className="SectionHeader">
+                    <span>PERM</span>
+                </div>
+                <ul className="list">
+                    <li>Short <span>£35</span></li>
+                    <li>Long <span>£45</span></li>
+                    <li>Extra long <span>£55</span></li>
+                </ul>
+            </div>
+
+            <div className="ServiceSection">
+                <div className="SectionHeader">
+                    <span>COLOURING</span>
+                </div>
+                <ul className="list">
+                    <li>Short <span>£20</span></li>
+                    <li>Long</li>
+                    <li>Extra long</li>
+                </ul>
+            </div>
+
+            <div className="ServiceSection">
+                <div className="SectionHeader">
+                    <span>HIGHLIGHT</span>
                 </div>
                 <ul className="list">
                     <li>Short</li>
@@ -41,51 +80,7 @@ export default class ProvidedServices extends React.Component {
 
             <div className="ServiceSection">
                 <div className="SectionHeader">
-                    <img src={Straightening} />
-                </div>
-                <ul className="list">
-                    <li>Short</li>
-                    <li>Long</li>
-                    <li>Extra long</li>
-                </ul>
-            </div>
-
-            <div className="ServiceSection">
-                <div className="SectionHeader">
-                    <img src={Perm} />
-                </div>
-                <ul className="list">
-                    <li>Short</li>
-                    <li>Long</li>
-                    <li>Extra long</li>
-                </ul>
-            </div>
-
-            <div className="ServiceSection">
-                <div className="SectionHeader">
-                    <img src={Colouring} />
-                </div>
-                <ul className="list">
-                    <li>Short</li>
-                    <li>Long</li>
-                    <li>Extra long</li>
-                </ul>
-            </div>
-
-            <div className="ServiceSection">
-                <div className="SectionHeader">
-                    <img src={Highlight} />
-                </div>
-                <ul className="list">
-                    <li>Short</li>
-                    <li>Long</li>
-                    <li>Extra long</li>
-                </ul>
-            </div>
-
-            <div className="ServiceSection">
-                <div className="SectionHeader">
-                    <img src={Treatments} />
+                    <span>TREATMENTS</span>
                 </div>
                 <ul className="list">
                     <li>Short</li>

@@ -5,7 +5,7 @@ export default class OpeningHours extends React.Component {
     render(){
       return (
         <div className="OpeningHoursContainer">
-          Open hour
+          OPENING HOURS
         </div>             
       );
     }

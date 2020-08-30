@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 @font-face {
   font-family: 'arimobold';
   src: url('fonts/arimo-bold-webfont.woff2') format('woff2'),
@@ -35,50 +39,22 @@ body {
   margin: 0;
   box-sizing: border-box;
 
-  font-family: arimobold, sans-serif;
+  /* font-family: arimobold, sans-serif; */
+  font-family: 'Russo One', cursive;
   font-size: 16px;
   max-width: 1920px;
   margin: 0 auto;
-  background-color: #eeeeee;
+  background-color: #fff;
   color: #222831;
-
 }
 
-.App {
-  text-align: center;
-}
+/* --------------- Generic --------------- */
+/* --------------- Generic --------------- */
+/* --------------- Generic --------------- */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-/* ----------------- Start ----------------- */
-/* Generic*/
 .button {
   border-radius: 0;
-  color: #1e8a81;
+  color: #fff;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -89,17 +65,16 @@ body {
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
-  border: 2px solid #1e8a81;
+  border: 2px solid #fff;
   cursor: pointer;
   display: flex;
   align-self: center;
   font-size: 1rem;
   line-height: 1;
-  margin: 20px;
+  margin: 20px auto;
   padding: 1.2em 2.8em;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   justify-content: center;
   width: 200px;
@@ -109,9 +84,12 @@ body {
     color: #fff;
     font-weight: 1000;
     background: #1e8a81 !important;
+  border: 2px solid #1e8a81;
+
   }
 
 .HeaderContainer {
+  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -126,9 +104,11 @@ body {
     width: 40px;
     padding-right: 15px;
     width: 30px;
+    margin: 0 !important;
   }
 
 .SubHeader {
+  color: #fff;
   width: 100%;
   font-size: 24px;
   font-weight: 700;
@@ -148,9 +128,10 @@ body {
 }
 
 
+/* --------------- Home Page --------------- */
+/* --------------- Home Page --------------- */
+/* --------------- Home Page --------------- */
 
-
-/*Home Page*/
 .HomePageContainer {
   background: transparent;  /*bisque;*/
   display: flex;
@@ -159,18 +140,37 @@ body {
 }
 
   .LandingPageContainer {
-    background-image: url('./images/pexels-karolina-grabowska-4210315.jpg');
+    position: relative;
+    background-image: url('./images/pexels-cottonbro-3992874.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 500px;
+    height: 800px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     margin-bottom: 50px;
   }
+
+    .LandingPageContainer:after {
+      content: '\A';
+      position: absolute;
+      width: 100%; height:100%;
+      top:0; 
+      left:0;
+      /* bottom: 0; */
+      background:rgba(0,0,0,0.5);
+      opacity: 1;
+      transition: all 1s;
+      -webkit-transition: all 1s;
+  }
+
+    .LandingPageContainer .overlay{
+      margin-top: 300px;
+      z-index: 10;
+    }
 
   .ServiceContainer,
   .OpeningHoursContainer,
@@ -194,18 +194,20 @@ body {
   .ServiceSection {
     flex: 1 1 500px;
     flex: 0 1 500px;
-    margin: 5px;
+    margin: 10px 5px;
     margin-bottom: 20px;
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
     flex-wrap: wrap;
-
+    background: #ededed;
+    margin: 20px;
+    padding: 5px 0 15px 0;
+    box-shadow: 0px 0px 10px 0px #8d93ab;
   }
 
     .ServiceSection ul {
-      border-left: 10px solid #1e8a81;
-      margin: 0 10%;
+      margin: 0 10%;      
     }
 
       .ServiceSection ul li{
@@ -214,26 +216,106 @@ body {
       }
 
     .SectionHeader {
-      /* border-left: 10px solid #1e8a81; */
-      /* border-bottom: 1px solid #1e8a81; */
       padding: 5px;
-      /* opacity: 0.7; */
       margin: 0 10%;      
     }
 
       .SectionHeader span {
-        font-family: arimobold_italic;
+        /* font-family: arimobold_italic; */
         font-size: 20px;
         color: #393e46;
       }
 
     .ServiceSection li {
-      padding: 5px 15px;
+      padding: 2px 0;
     }
 
 
+.ContactDetails {
+  padding: 10px 50px;
+  font-size: 24px;  
+}
 
-/*timeslot picker*/
+  .ContactDetails > a {
+    display: inline-block;
+    padding-bottom: 50px;
+    text-decoration: none;
+    color: #393e46;
+  }
+
+.ContactUsContainer > div {
+  width: 100%;
+}
+
+.OpeningHoursContainer h4 {
+  margin: 0 0 5px 0;
+}
+
+.OpeningHoursContainer img {
+  margin: 15px 0;
+}
+
+.NormalHours,
+.ChristmasHours,
+.ChineseNewYearHours {
+  width: 100%;
+}
+
+.ChristmasHours div {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.ChristmasHours div p {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 5px 0;
+}
+
+#locationMap iframe{
+  width: 400px;
+  height: 350px;
+  border: 0 
+}
+
+.FooterContainer {
+  width: 100%;
+  height: 70px;
+  background: #222831;
+  text-align: center;
+  color: #fff;
+  line-height: 70px;
+}
+
+
+
+
+
+/* --------------- Date picker --------------- */
+/* --------------- Date picker --------------- */
+/* --------------- Date picker --------------- */
+
+.DateSelectionPageContainer {
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+/* --------------- Timeslot picker --------------- */
+/* --------------- Timeslot picker --------------- */
+/* --------------- Timeslot picker --------------- */
 
 .TimeslotContainer {
   margin: 0 auto;
@@ -267,5 +349,30 @@ body {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) { 
+  .ServiceSection ul {
+    margin: 0 5%;
+  }
+
+  .ServiceSection {
+    margin: 15px;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .OpeningHoursContainer img {
+    max-width: 290px;
+  }
+
+  .ChristmasHours div {
+    max-width: 290px;
+  }
+  
+  #locationMap iframe{
+    width: 350px;
   }
 }

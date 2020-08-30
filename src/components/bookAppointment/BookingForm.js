@@ -53,13 +53,13 @@ export default class BookingForm extends React.Component {
 
 
     render(){
-        const appointmentTime = this.props.location.appointmentTime;
+        // const appointmentTime = this.props.location.appointmentTime;
         return (
             <div>
-                <p>{appointmentTime.date}</p>
+                {/* <p>{appointmentTime.date}</p>
                 <p>{appointmentTime.timeSlotID}</p>
                 <p>{appointmentTime.timeSlotLabel}</p>
-                
+                 */}
                 <form onSubmit={this.submitBooking}>
                     <input type="text" placeholder="Name" ref={this.userName} required></input>
                     <input type="tel" placeholder="Phone" ref={this.userPhone} required></input>

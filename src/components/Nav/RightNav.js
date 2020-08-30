@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 const Ul = styled.ul`
   list-style: none;
@@ -8,8 +9,16 @@ const Ul = styled.ul`
   padding: 0;
   margin: 0;
 
-  li {
-    padding: 10px 30px;
+  a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+
+    /* background-image: linear-gradient(transparent, white);
+    border-radius: 100px;
+    width: 110px;
+    text-align: center;
+    margin: 0 10px; */
   }
 
   @media (max-width: 768px) {
@@ -36,15 +45,16 @@ const DIV = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-right: 50px;
 `;
 
 const RightNav = ({ open }) => {
   return (
     <DIV>
       <Ul open={open}>
-        <li>HOME</li>
-        <li>SERVICES</li>
-        <li>CONTACT US</li>
+        <Link to='/' className="">HOME</Link>
+        <Link to='/' className="">SERVICES</Link>
+        <Link to='/' className="">CONTACT US</Link>
       </Ul>
     </DIV>    
   )

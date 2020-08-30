@@ -32,20 +32,18 @@ export default class DateSelector extends React.Component {
         return (
         <div className="DateSelectionPageContainer">
             <div className="flexbox HeaderContainer">
-              <img src={headerIcon} className="headerIcon"></img>
-              <span className="Header">PICK APPOINTMENT DATE</span>
-          </div>
-          <div style={{marginBottom: "50px"}}>
-            <DatePicker 
-                selected={this.state.selectedDate} 
-                onChange={this.handleChange}
-                onSelect={this.handleSelect}
-                dateFormat='MM-dd'
-                inline
-                minDate = {new Date()}
-            />
-          </div>            
-            <OpeningHours />
+              <h2 className="Header">PICK DATE</h2>
+            </div>
+            <div style={{marginBottom: "50px"}}>
+                <DatePicker 
+                    selected={this.state.selectedDate} 
+                    onChange={this.handleChange}
+                    onSelect={this.handleSelect}
+                    dateFormat='MM-dd'
+                    inline
+                    // minDate = {new Date()}
+                />
+            </div>
         </div>
         )
     }

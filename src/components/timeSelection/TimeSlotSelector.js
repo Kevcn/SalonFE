@@ -34,19 +34,42 @@ export default class TimeSlotSelector extends React.Component {
         })
         console.log(this.state.timeSlotAvailability);
 
-    };   
+    };
+
+    appendDateSuffix = (date) => {
+        if (date > 3 && date < 21) return 'th';
+        switch (date % 10) {
+          case 1:  return "st";
+          case 2:  return "nd";
+          case 3:  return "rd";
+          default: return "th";
+        }
+    }
 
     render(){
         const props = this.props;
-        return (
-            <div>
-                <p>Time slot selector</p>
-                <h2>Month - {this.state.month}</h2>
-                <h2>Day - {this.state.day}</h2>
 
-                <div class="TimeslotContainer">
-                    {this.state.timeSlotAvailability.map(availability => <SingleTimeSlot key={availability.timeSlotID} {...availability}/>)}
-                </div>             
+        const monthNames = [
+            "January", "February", 
+            "March", "April", 
+            "May", "June",
+            "July", "August", 
+            "September", "October", 
+            "November", "December"
+        ];
+
+        return (
+            <div className="TimeSlotPageContainer">
+                <div className="wrapper" style={{maxWidth: "1000px"}}>
+                    <div className="flexbox HeaderContainer" style={{marginBottom: "0"}}>
+                        <h2 className="Header">PICK TIME</h2>
+                        <h4>{this.state.day}{this.appendDateSuffix(this.state.day)}</h4>
+                        <h4>{monthNames[this.state.month - 1]}</h4>
+                    </div>
+                    <div class="TimeslotContainer">
+                        {this.state.timeSlotAvailability.map(availability => <SingleTimeSlot key={availability.timeSlotID} {...availability}/>)}
+                    </div>   
+                </div>                          
             </div>
         )
     }

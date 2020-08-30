@@ -1,5 +1,7 @@
 import React from 'react';
-import headerIcon from '../../images/align-right-solid.svg';
+import Phone from '../../images/phone.svg';
+import Weixin from '../../images/weixin.svg';
+import Email from '../../images/email.svg';
 
 export default class ContactUs extends React.Component {
     
@@ -7,15 +9,26 @@ export default class ContactUs extends React.Component {
       return (
         <div className="ContactUsContainer">
           <div className="flexbox HeaderContainer">
-            <img src={headerIcon} className="headerIcon"></img>
             <span className="Header">CONTACT US</span>
           </div>
           <div className="flexbox">
 
             <div className="ContactDetails">
+              <div className="Phone">
+                <img src={Phone} />
                 <a href="tel: +44 7551953808">07551 953808</a>
-                <p>93 Princess St</p>
-                <p>Manchester, M1 4HT</p>
+              </div>
+              <div className="WeiXin">
+                <img src={Weixin} style ={{paddingRight: "15px"}} />
+                <a>weixinnumberhere</a>
+              </div>
+              <div className="Email">
+                <img src={Email} />
+                <a href="mailto:liyq1122@gmail.com">example@gmail.com</a>
+              </div>
+              <hr />
+              <p style={{margin: "60px 0 10px 0"}}>93 Princess St</p>
+              <p style={{margin: "0"}}>Manchester, M1 4HT</p>
             </div>
 
             <div id="locationMap">

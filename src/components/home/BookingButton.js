@@ -8,7 +8,7 @@ export default class BookingButton extends React.Component {
         <div className="LandingPageContainer">
           <div className="overlay">
             <span className="SubHeader">10% Student Discount</span>
-            <Link to='/dateselector' className="button">BOOK NOW</Link>
+            <Link to='/dateselector' className="button" style={{color: "#fff", borderColor: "#fff"}}>BOOK NOW</Link>
           </div>            
         </div>             
       );

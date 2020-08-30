@@ -7,7 +7,6 @@ export default class ProvidedServices extends React.Component {
       return (
         <div className="ServiceContainer">
             <div className="flexbox HeaderContainer">
-                <img src={headerIcon} className="headerIcon"></img>
                 <span className="Header">SERVICES</span>
             </div>            
             <div className="ServiceDetails">

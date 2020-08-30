@@ -12,11 +12,15 @@ export default class SingleTimeSlot extends React.Component {
         
         const available = availability.available ?
             "transparent" :
-            "#a3a3c2";
+            "#d6e0f0";
 
         const disableButton = availability.available ?
              "auto" :
              "none";
+
+        const border = availability.available ?
+             "#222831" : // Black
+             "#d6e0f0"; // Grey
 
         const timeSlotLabels = [
             "11:00", "11:30", 
@@ -29,6 +33,10 @@ export default class SingleTimeSlot extends React.Component {
             "18:00", "18:30"
         ];
 
+        const displayLabel = availability.available ?
+            timeSlotLabels[availability.timeSlotID - 1] :
+            "Full";
+
         return (
             <section class="TimeSlotBlock">
                 <Link to={{
@@ -39,9 +47,9 @@ export default class SingleTimeSlot extends React.Component {
                         timeSlotLabel: timeSlotLabels[availability.timeSlotID - 1]}
                         }}
                         className="button"
-                        style={{textDecoration: "none", background: available, pointerEvents: disableButton}}
+                        style={{background: available, pointerEvents: disableButton, borderColor: border }}
                         >
-                            {timeSlotLabels[availability.timeSlotID - 1]}
+                            {displayLabel}
                 </Link>
             </section>
         )

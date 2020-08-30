@@ -8,7 +8,6 @@ export default class OpeningHours extends React.Component {
       return (
         <div className="OpeningHoursContainer">
           <div className="flexbox HeaderContainer">
-              <img src={headerIcon} className="headerIcon"></img>
               <span className="Header">OPENING HOURS</span>
           </div>
 

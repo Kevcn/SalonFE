@@ -38,7 +38,6 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
   /* font-family: arimobold, sans-serif; */
   font-family: 'Russo One', cursive;
   font-size: 16px;
@@ -54,7 +53,7 @@ body {
 
 .button {
   border-radius: 0;
-  color: #fff;
+  color: #222831;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -65,7 +64,7 @@ body {
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
-  border: 2px solid #fff;
+  border: 2px solid #222831;
   cursor: pointer;
   display: flex;
   align-self: center;
@@ -83,15 +82,26 @@ body {
   .button:hover {
     color: #fff;
     font-weight: 1000;
-    background: #1e8a81 !important;
-  border: 2px solid #1e8a81;
+    background: #222831 !important;
+    border: 2px solid #222831;
+  }
 
+  .overlay .button:hover {
+    color: #222831 !important;
+    background: #fff !important;
   }
 
 .HeaderContainer {
   width: 100%;
   margin-bottom: 20px;
+  margin-top: 50px;
 }
+
+  .HeaderContainer > h2 {
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+  }
 
   .Header {
     font-size: 36px;
@@ -180,8 +190,8 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    max-width: 1500px;
-    margin-bottom: 50px;
+    /* max-width: 1500px; */
+    padding-bottom: 50px;
   }
 
 .ServiceDetails {
@@ -195,15 +205,15 @@ body {
     flex: 1 1 500px;
     flex: 0 1 500px;
     margin: 10px 5px;
-    margin-bottom: 20px;
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
     flex-wrap: wrap;
     background: #ededed;
-    margin: 20px;
+    margin: 0 10px 30px 10px;
     padding: 5px 0 15px 0;
     box-shadow: 0px 0px 10px 0px #8d93ab;
+    border-radius: 20px;
   }
 
     .ServiceSection ul {
@@ -223,7 +233,7 @@ body {
       .SectionHeader span {
         /* font-family: arimobold_italic; */
         font-size: 20px;
-        color: #393e46;
+        color: #222831;
       }
 
     .ServiceSection li {
@@ -232,19 +242,36 @@ body {
 
 
 .ContactDetails {
-  padding: 10px 50px;
-  font-size: 24px;  
+  padding: 10px 80px;
+  font-size: 20px;  
 }
 
-  .ContactDetails > a {
+  .ContactDetails a {
     display: inline-block;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
     text-decoration: none;
-    color: #393e46;
+    color: #222831;
+  }
+
+  .ContactDetails .Phone,
+  .ContactDetails .WeiXin,
+  .ContactDetails .Email {
+    display: flex;
+    margin-bottom: 15px;
+  }
+
+
+  .ContactDetails img {
+    height: 30px;
+    padding-right: 20px;
   }
 
 .ContactUsContainer > div {
   width: 100%;
+}
+
+.OpeningHoursContainer {
+  background: #d6e0f0;
 }
 
 .OpeningHoursContainer h4 {
@@ -296,7 +323,9 @@ body {
 /* --------------- Date picker --------------- */
 /* --------------- Date picker --------------- */
 
-.DateSelectionPageContainer {
+.DateSelectionPageContainer,
+.BookingPageContainer,
+.TimeSlotPageContainer {
   background: transparent;
   display: flex;
   flex-wrap: wrap;
@@ -304,11 +333,97 @@ body {
   padding-top: 70px;
 }
 
+.react-datepicker {  
+  font-family: 'Russo One', cursive !important;
+  color: #222831 !important;
+}
 
 
 
 
+/* --------------- Booking Form --------------- */
+/* --------------- Booking Form --------------- */
+/* --------------- Booking Form --------------- */
 
+
+.BookingPageContainer .wrapper {
+  padding: 20px;
+}
+
+
+  .form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+  }
+  
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    /* color: #fff; */
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  .form__field::placeholder {
+    color: transparent;
+  }
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+  
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+  }
+  
+  .form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+  }
+  .form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #11998e;
+    font-weight: 700;
+  }
+  
+  /* reset input */
+  .form__field:required, .form__field:invalid {
+    box-shadow: none;
+  }
+
+
+  .BookingPageContainer .AppointmentTime {
+    width: 100%;
+  }
+
+    .BookingPageContainer .AppointmentTime h4 {
+      padding: 0 20px;
+    }
+
+    .BookingPageContainer button {
+      color: #fff;
+      background: #222831;
+      margin-top: 50px;
+    }
+ 
 
 
 
@@ -316,29 +431,33 @@ body {
 /* --------------- Timeslot picker --------------- */
 /* --------------- Timeslot picker --------------- */
 /* --------------- Timeslot picker --------------- */
+
+
+
 
 .TimeslotContainer {
-  margin: 0 auto;
-  width: 50%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
+  .TimeSlotPageContainer h4 {
+    padding: 0 5px;
+  }
+
+  .TimeSlotPageContainer > * {
+    width: 100%;
+  }
+
   .TimeSlotBlock {
     display: flex;
     justify-content: center;
-    width: 40%;
-    max-width: 200px;
+    padding: 10px;
   }
 
-
-
-
-
-
-
-
+    .TimeSlotBlock > a {
+      margin: 0;
+    }
 
 
 
@@ -359,6 +478,22 @@ body {
 
   .ServiceSection {
     margin: 15px;
+  }
+
+  .ContactDetails {
+    padding: 10px 0;
+  }
+
+  .TimeslotContainer {
+    justify-content: center;
+  }
+
+  .TimeSlotBlock {
+    padding: 5px 10px;
+  }
+
+  .TimeSlotBlock > a {
+    width: 150px;
   }
 
 }

@@ -1,11 +1,5 @@
-import logo from '../../logo.svg';
 import '../../App.css';
-
 import React, {useState} from 'react';
-import { withRouter } from 'react-router-dom';
-import OpeningHours from '../home/OpeningHours';
-import headerIcon from '../../images/align-right-solid.svg';
-
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 

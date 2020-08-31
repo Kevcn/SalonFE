@@ -325,7 +325,8 @@ body {
 
 .DateSelectionPageContainer,
 .BookingPageContainer,
-.TimeSlotPageContainer {
+.TimeSlotPageContainer,
+.ConfirmationPageContainer {
   background: transparent;
   display: flex;
   flex-wrap: wrap;
@@ -459,7 +460,21 @@ body {
       margin: 0;
     }
 
+    .ConfirmationPageContainer {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
 
+    .ConfirmationPageContainer > div {
+      width: 100%;
+    }
+    
+    .ConfirmationPageContainer span {
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      padding: 5px 0;
+    }
 
 
 @keyframes App-logo-spin {

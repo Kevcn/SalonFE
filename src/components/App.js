@@ -6,6 +6,7 @@ import TimeSlotSelector from './timeSelection/TimeSlotSelector';
 import BookingForm from './bookAppointment/BookingForm';
 import Navbar from './Nav/Navbar';
 import HomePage from './home/HomePage';
+import Confirmation from './confirmation/confirmation';
 
 export default class App extends React.Component {
 
@@ -22,6 +23,7 @@ export default class App extends React.Component {
               <Route path='/dateselector' component={DateSelector} exact/>
               <Route path='/timeslots' component={TimeSlotSelector} exact/>
               <Route path='/book' component={BookingForm} exact/>
+              <Route path='/confirmation' component={Confirmation} exact/>
             </Switch>              
           </Router>
       </div>      

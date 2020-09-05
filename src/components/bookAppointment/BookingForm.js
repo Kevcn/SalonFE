@@ -46,12 +46,10 @@ export default class BookingForm extends React.Component {
             "description": "demo2dddd"
           }
           
-          await new Promise(r => setTimeout(r, 1000));
-
         console.log(bookingParameters);
         console.log(temp);
 
-        let res = await axios.post('http://localhost:8080/api/v1/Book', bookingParameters)
+        let res = await axios.post('https://localhost:5001/api/v1/Book', bookingParameters)
         
         console.log(res);
 

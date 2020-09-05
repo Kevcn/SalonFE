@@ -7,6 +7,8 @@ import BookingForm from './bookAppointment/BookingForm';
 import Navbar from './Nav/Navbar';
 import HomePage from './home/HomePage';
 import Confirmation from './confirmation/confirmation';
+import Login from './Management/Login';
+import ViewBookings from './Management/ViewBookings';
 
 export default class App extends React.Component {
 
@@ -24,6 +26,8 @@ export default class App extends React.Component {
               <Route path='/timeslots' component={TimeSlotSelector} exact/>
               <Route path='/book' component={BookingForm} exact/>
               <Route path='/confirmation' component={Confirmation} exact/>
+              <Route path='/Login' component={Login} exact/>
+              <Route path='/ViewBookings' component={ViewBookings} exact/>
             </Switch>              
           </Router>
       </div>      

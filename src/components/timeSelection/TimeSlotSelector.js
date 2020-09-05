@@ -20,7 +20,7 @@ export default class TimeSlotSelector extends React.Component {
 
         console.log(queryDate);
 
-        const response = await axios.get(`http://localhost:8080/api/v1/GetTimeavailability/${queryDate}`)        
+        const response = await axios.get(`https://localhost:5001/api/v1/GetTimeavailability/${queryDate}`)        
 
         var responseData = response.data;
         for (let i = 0; i < responseData.length; i++) {

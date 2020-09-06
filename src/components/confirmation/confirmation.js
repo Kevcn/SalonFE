@@ -1,8 +1,5 @@
-// Please try again or call us on 018219291
-
-
-// import '../../App.css';
 import React, {useState} from 'react';
+
 export default class Confirmation extends React.Component {    
     state = {
         selectedDate: new Date()

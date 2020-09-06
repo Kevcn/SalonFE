@@ -326,7 +326,9 @@ body {
 .DateSelectionPageContainer,
 .BookingPageContainer,
 .TimeSlotPageContainer,
-.ConfirmationPageContainer {
+.ConfirmationPageContainer,
+.LoginPageContainer,
+.ViewBookingPageContainer {
   background: transparent;
   display: flex;
   flex-wrap: wrap;
@@ -426,15 +428,9 @@ body {
     }
  
 
-
-
-
 /* --------------- Timeslot picker --------------- */
 /* --------------- Timeslot picker --------------- */
 /* --------------- Timeslot picker --------------- */
-
-
-
 
 .TimeslotContainer {
   display: flex;
@@ -460,31 +456,72 @@ body {
       margin: 0;
     }
 
-    .ConfirmationPageContainer {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+/* --------------- Confirmation --------------- */
+/* --------------- Confirmation --------------- */
+/* --------------- Confirmation --------------- */
 
-    .ConfirmationPageContainer > div {
-      width: 100%;
-    }
-    
-    .ConfirmationPageContainer span {
-      display: inline-block;
-      text-align: center;
-      width: 100%;
-      padding: 5px 0;
-    }
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ConfirmationPageContainer {
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
+.ConfirmationPageContainer > div {
+  width: 100%;
+}
+
+.ConfirmationPageContainer span {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 5px 0;
+}
+
+
+/* --------------- Management --------------- */
+/* --------------- Management --------------- */
+/* --------------- Management --------------- */
+
+.ViewBookingPageContainer {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+  .DayBookingContainer {
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+  }
+
+    .DayBookingContainer > h3 {
+      text-align: center;
+    }
+
+  .SingleBookingContainer{
+    flex-wrap: wrap;
+    background: #ededed;
+    box-shadow: 0px 0px 10px 0px #8d93ab;
+    border-radius: 10px;
+    margin: 10px;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .SingleBookingContainer h2 {
+    margin: 0;
+    line-height: 60px;
+  }
+
+  .SingleBookingContainer h3 {
+    margin: 5px;
+  }
+
+
+  
+
+
+
+
+
 
 @media (max-width: 480px) { 
   .ServiceSection ul {

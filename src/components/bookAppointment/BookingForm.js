@@ -5,26 +5,12 @@ export default class BookingForm extends React.Component {
 
     userName = React.createRef();
     userPhone = React.createRef();
-    userEmail = React.createRef();
     userDescription = React.createRef();
-
-    // props to be passed in -
-    // time slot ID
-    // date
     
-    // Call function to book the appointment
-
-    componentDidMount(){
-        console.log(this.props);
-    }
-
-    submitBooking = async (event) => {
+    submitBooking = (event) => {
         event.preventDefault();
 
         const appointmentTime = this.props.location.appointmentTime;
-        console.log(this.userName.current.value);
-        console.log(this.userPhone.current.value);
-        console.log(this.userDescription.current.value);
 
         var bookingParameters = {
             contact: {
@@ -37,24 +23,33 @@ export default class BookingForm extends React.Component {
         }
 
         var temp = {
-            "contact": {
-              "name": "Terrence",
-              "phone": "07928371212"
+            contact: {
+                name: "test",
+                phone: "07921212121"
             },
-            "timeSlotID": 8,
-            "date": "2020-10-01",
-            "description": "demo2dddd"
-          }
+            timeSlotID: 3,
+            date: "2020-10-01",
+            description: "demo2dddd"
+        }
           
         console.log(bookingParameters);
         console.log(temp);
 
-        let res = await axios.post('https://localhost:5001/api/v1/Book', bookingParameters)
-        
-        console.log(res);
-
-        // TODO: handle errors
-
+        axios.post(
+            'https://localhost:5001/api/v1/Book',
+            bookingParameters,
+            {
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            })            
+            .then((res) => {
+                console.log(res);
+                // redirect to confirmation page
+            })
+            .catch((error) => {
+                // TODO: handle errors
+        })
     }
 
     appendDateSuffix = (date) => {
@@ -92,33 +87,20 @@ export default class BookingForm extends React.Component {
                     </div>                
                     <div className="formContainer">
                         <form onSubmit={this.submitBooking}>
-
-                            <div class="form__group field">
-                                <input type="text" class="form__field" placeholder="Name" name="name" id='name' ref={this.userName} required />
-                                <label htmlFor="name" class="form__label">Name</label>
+                            <div className="form__group field">
+                                <input type="text" className="form__field" placeholder="Name" name="name" id='name' ref={this.userName} required />
+                                <label htmlFor="name" className="form__label">Name</label>
                             </div>
 
-                            <div class="form__group field">
-                                <input type="tel" class="form__field" placeholder="Phone" name="phone" id='phone' ref={this.userPhone} required />
-                                <label htmlFor="phone" class="form__label">Phone</label>
+                            <div className="form__group field">
+                                <input type="tel" className="form__field" placeholder="Phone" name="phone" id='phone' ref={this.userPhone} required />
+                                <label htmlFor="phone" className="form__label">Phone</label>
                             </div>
 
-                            <div class="form__group field">
-                                <input type="text" class="form__field" placeholder="Description" name="description" id='description' ref={this.userDescription} required />
-                                <label htmlFor="description" class="form__label">Description</label>
+                            <div className="form__group field">
+                                <input type="text" className="form__field" placeholder="Description" name="description" id='description' ref={this.userDescription} required />
+                                <label htmlFor="description" className="form__label">Description</label>
                             </div>
-
-                            {/* <div className="form_control">
-                                <input name="name" type="text" placeholder="Name" ref={this.userName} required></input>
-                                <label for="name" className="form_label">Name</label>
-                            </div>
-                            <div className="form_control">
-                                <input type="tel" placeholder="Phone" ref={this.userPhone} required></input>
-                            </div>
-                            <div className="form_control">
-                                <input type="text" placeholder="Description" ref={this.userDescription} ></input>
-                            </div> */}
-
                             <button className="button">Book</button>
                         </form>
                     </div>

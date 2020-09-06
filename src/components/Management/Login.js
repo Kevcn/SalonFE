@@ -6,7 +6,7 @@ export default class Login extends React.Component {
     password = React.createRef();
 
     componentDidMount(){
-        this.logout();
+        // this.logout();
     }
 
     handleSubmit = (e) => {
@@ -18,8 +18,10 @@ export default class Login extends React.Component {
         this.login(username, password)
             .then(
                 user => {
-                    const { from } = this.props.location.state || { from: { pathname: "/" } };
-                    // this.props.history.push(from); TODO: Redirect to ViewBookings page
+                    // const { from } = this.props.location.state || { from: { pathname: "/" } };
+                    this.props.history.push({
+                        pathname: "/viewbookings"
+                    });
                 }
             );
     }
@@ -47,7 +49,6 @@ export default class Login extends React.Component {
     }
 
     logout = () => {
-        // remove user from local storage to log user out
         localStorage.removeItem('user');
     }
 
@@ -58,7 +59,6 @@ export default class Login extends React.Component {
                 if (response.status === 401) {
                     // auto logout if 401 response returned from api
                     this.logout();
-                    // location.reload(true);
                 }
     
                 const error = (data && data.message) || response.statusText;
@@ -69,22 +69,12 @@ export default class Login extends React.Component {
         });
     }
 
-    authHeader = () => {
-        // return authorization header with basic auth credentials
-        let user = JSON.parse(localStorage.getItem('user'));
-    
-        if (user && user.authdata) {
-            return { 'Authorization': 'Basic ' + user.authdata };
-        } else {
-            return {};
-        }
-    }
-
-
     render() {
         return (
-            <div className="BookingPageContainer">
-                <h2>Login</h2>
+            <div className="LoginPageContainer">
+                <div className="flexbox HeaderContainer">
+                    <h2>Login</h2> 
+                </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form__group field">
                         <input type="text" className="form__field" placeholder="Username" name="username" id='username' ref={this.userName} required />

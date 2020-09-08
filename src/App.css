@@ -474,6 +474,11 @@ body {
   text-align: center;
   width: 100%;
   padding: 5px 0;
+  font-size: 20px;
+}
+
+.ConfirmationPageContainer h1 {
+  text-align: center;
 }
 
 

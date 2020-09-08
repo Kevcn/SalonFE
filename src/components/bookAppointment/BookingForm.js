@@ -54,8 +54,12 @@ export default class BookingForm extends React.Component {
                 }
             })
             .then((res) => {
-                console.log(res);
+                console.log(res.status);
                 // redirect to confirmation page
+                this.props.history.push({
+                    pathname: "/confirmation",
+                    data: res
+                });
             })
             .catch((error) => {
                 // TODO: handle errors
@@ -92,7 +96,7 @@ export default class BookingForm extends React.Component {
                 <div className="wrapper">
                     <div className="AppointmentTime flexbox HeaderContainer">
                         <h2>YOUR APPOINTMENT</h2>
-                        <h4 style={{paddingRight: "5px"}}>{day}{this.appendDateSuffix(day)} {monthNames[month]} at</h4>
+                        <h4 style={{paddingRight: "5px"}}>{day}{this.appendDateSuffix(day)} {monthNames[month - 1]} at</h4>
                         <h4 style={{paddingLeft: "0"}}>{appointmentTime.timeSlotLabel}</h4>
                     </div>                
                     <div className="formContainer">

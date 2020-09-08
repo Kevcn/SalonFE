@@ -2,11 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 export default class SingleTimeSlot extends React.Component {
-        
-    componentDidMount(){
-        console.log(this.props)
-    }
-    
+
     render(){
         const availability = this.props;
         
@@ -38,7 +34,7 @@ export default class SingleTimeSlot extends React.Component {
             "Full";
 
         return (
-            <section class="TimeSlotBlock">
+            <section className="TimeSlotBlock">
                 <Link to={{
                     pathname: '/book',
                     appointmentTime: {

@@ -18,8 +18,6 @@ export default class TimeSlotSelector extends React.Component {
 
         const queryDate = [year, month, day].join('-');
 
-        console.log(queryDate);
-
         const response = await axios.get(`https://localhost:5001/api/v1/GetTimeavailability/${queryDate}`)        
 
         var responseData = response.data;
@@ -32,8 +30,6 @@ export default class TimeSlotSelector extends React.Component {
             month: month,
             day: day
         })
-        console.log(this.state.timeSlotAvailability);
-
     };
 
     appendDateSuffix = (date) => {
@@ -66,7 +62,7 @@ export default class TimeSlotSelector extends React.Component {
                         <h4>{this.state.day}{this.appendDateSuffix(this.state.day)}</h4>
                         <h4>{monthNames[this.state.month - 1]}</h4>
                     </div>
-                    <div class="TimeslotContainer">
+                    <div className="TimeslotContainer">
                         {this.state.timeSlotAvailability.map(availability => <SingleTimeSlot key={availability.timeSlotID} {...availability}/>)}
                     </div>   
                 </div>                          

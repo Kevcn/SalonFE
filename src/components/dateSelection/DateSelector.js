@@ -35,7 +35,7 @@ export default class DateSelector extends React.Component {
                     onSelect={this.handleSelect}
                     dateFormat='MM-dd'
                     inline
-                    // minDate = {new Date()}
+                    minDate = {new Date()}
                 />
             </div>
         </div>

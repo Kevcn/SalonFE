@@ -98,7 +98,7 @@ export default class BookingForm extends React.Component {
                         <h2>YOUR APPOINTMENT</h2>
                         <h4 style={{paddingRight: "5px"}}>{day}{this.appendDateSuffix(day)} {monthNames[month - 1]} at</h4>
                         <h4 style={{paddingLeft: "0"}}>{appointmentTime.timeSlotLabel}</h4>
-                    </div>                
+                    </div>
                     <div className="formContainer">
                         <form onSubmit={this.submitBooking}>
                             <div className="form__group field">

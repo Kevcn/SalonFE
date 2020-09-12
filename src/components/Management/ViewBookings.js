@@ -24,11 +24,7 @@ export default class ViewBookings extends React.Component {
       });
 
       var bookings = Object.keys(group).map((key) => [key, group[key]]);
-
-      bookings.sort((a, b) => {
-        return a[0] - b[0];
-      })
-
+      console.log(bookings);
 
       this.setState({bookings: bookings})
     });
@@ -91,7 +87,7 @@ export default class ViewBookings extends React.Component {
               <h2>BOOKINGS</h2> 
           </div>
           <div className="DayBookings flexbox">
-            {this.state.bookings.map(book => <DayBookingRecords key={book.id} {...book}/>)}
+            {this.state.bookings.map(book => <DayBookingRecords key={book[1][0].id} {...book}/>)}
           </div>
         </div>
       )

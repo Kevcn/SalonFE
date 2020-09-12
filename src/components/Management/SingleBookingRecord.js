@@ -2,13 +2,6 @@ import React from 'react';
 
 export default class SingleBookingRecord extends React.Component {    
  
-    componentDidMount(){
-        console.log(this.props);
-    }
-
-
-    
-
     render(){
         const timeSlotLabels = [
             "11:00", "11:30", 

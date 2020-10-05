@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';
 import Logo from '../../images/logo.png'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 const Nav = styled.nav`
   background: #222831;
@@ -29,7 +30,7 @@ const Navbar = () => {
     <Nav>
       <div className="logo">
         {/* <img src={Logo} /> */}
-        <span style={{color: "#fff", fontSize: "36px", lineHeight: "50px"}}>JUN SALON</span>
+        <Link to='/' style={{color: "#fff", fontSize: "36px", lineHeight: "50px", textDecoration: "none"}}>JUN SALON</Link>
       </div>
       <Burger />
     </Nav>

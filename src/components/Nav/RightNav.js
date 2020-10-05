@@ -48,13 +48,13 @@ const DIV = styled.div`
   padding-right: 50px;
 `;
 
-const RightNav = ({ open }) => {
+const RightNav = (props) => {
   return (
     <DIV>
-      <Ul open={open}>
-        <Link to='/' className="">HOME</Link>
-        <Link to='/' className="">SERVICES</Link>
-        <Link to='/' className="">CONTACT US</Link>
+      <Ul open={props.open}>
+        <Link to='/' className="" onClick={() => props.setOpen(!props.open)}>HOME</Link>
+        <Link to='/' className="" onClick={() => props.setOpen(!props.open)}>SERVICES</Link>
+        <Link to='/' className="" onClick={() => props.setOpen(!props.open)}>CONTACT US</Link>
       </Ul>
     </DIV>    
   )

@@ -36,8 +36,9 @@ export default class Confirmation extends React.Component {
         ];
 
         if (this.props.location.data != undefined) {
-                    
+                        
             const status = this.props.location.data.status
+            localStorage.setItem('confirmationStatus', status);
 
             let rawDate = this.props.location.data.data.date.split('T')[0].replace(/-0+/g, '-');
             let day = rawDate.split('-')[2];
@@ -45,14 +46,16 @@ export default class Confirmation extends React.Component {
             let year = rawDate.split('-')[0];
             
             const dateLabel = `${day}${this.appendDateSuffix(day)} ${monthNames[month - 1]} ${year}`;
-
-            this.setState({ date: dateLabel  });
-            this.setState({ timeSlotLabel: timeSlotLabels[this.props.location.data.data.timeSlotID - 1] })
-
-            this.setState({ success: status == 200 ? true : false });
-            this.setState({ slotTaken: status == 400 ? true : false });
-            this.setState({ bookingError: status == 500 ? true : false });
+            localStorage.setItem('dataLabel', dateLabel);
         }
+
+        this.setState({ date: localStorage.getItem('dataLabel')});
+        this.setState({ timeSlotLabel: timeSlotLabels[localStorage.getItem('timeSlot') - 1] });
+
+        const status = localStorage.getItem('confirmationStatus');
+        this.setState({ success: status == 200 ? true : false });
+        this.setState({ slotTaken: status == 400 ? true : false });
+        this.setState({ bookingError: status == 500 ? true : false });
     }
 
     appendDateSuffix = (date) => {

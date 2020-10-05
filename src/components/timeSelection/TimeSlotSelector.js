@@ -6,17 +6,26 @@ export default class TimeSlotSelector extends React.Component {
 
     state = {
         timeSlotAvailability: [],
-        month: [],
-        day: []
+        month: "",
+        day: ""
     }
 
     async componentDidMount() {
        
-        const year = this.props.location.date.getFullYear();
-        const month = this.props.location.date.getMonth() + 1;
-        const day = this.props.location.date.getDate();
+        if (this.props.location.date != undefined) {
+            const year = this.props.location.date.getFullYear();
+            const month = this.props.location.date.getMonth() + 1;
+            const day = this.props.location.date.getDate();
 
-        const queryDate = [year, month, day].join('-');
+            const date = [year, month, day].join('-');
+
+            localStorage.setItem('date', date);
+            localStorage.setItem('year', year);
+            localStorage.setItem('month', month);
+            localStorage.setItem('day', day);
+        }
+
+        const queryDate = localStorage.getItem('date');
 
         const response = await axios.get(`https://localhost:5001/api/v1/GetTimeavailability/${queryDate}`)        
 
@@ -27,8 +36,8 @@ export default class TimeSlotSelector extends React.Component {
 
         this.setState({
             timeSlotAvailability: responseData,
-            month: month,
-            day: day
+            month: localStorage.getItem('month'),
+            day: localStorage.getItem('day')
         })
     };
 
@@ -43,7 +52,6 @@ export default class TimeSlotSelector extends React.Component {
     }
 
     render(){
-        const props = this.props;
 
         const monthNames = [
             "January", "February", 

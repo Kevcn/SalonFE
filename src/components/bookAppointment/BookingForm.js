@@ -8,26 +8,30 @@ export default class BookingForm extends React.Component {
         phone: "",
         description: "",
         date: "",
-        timeSlotID: ""
+        month: "",
+        day: "",
+        timeSlotID: "",
+        timeSlotLabel: ""
     }
 
     componentDidMount(){
-        this.setState({date: this.formatDate(new Date(this.props.location.appointmentTime.date))})
-        this.setState({timeSlotID: this.props.location.appointmentTime.timeSlotID })
-    }
 
-    formatDate = (date) => {
-        var d = new Date(date),
-            month = '' + (d.getMonth() + 1),
-            day = '' + d.getDate(),
-            year = d.getFullYear();
-    
-        if (month.length < 2) 
-            month = '0' + month;
-        if (day.length < 2) 
-            day = '0' + day;
-    
-        return [year, month, day].join('-');
+        if (this.props.location.appointmentTime != undefined) {
+
+            const date = this.props.location.appointmentTime.date;
+            const timeSlot = this.props.location.appointmentTime.timeSlotID;
+            const timeSlotLabel = this.props.location.appointmentTime.timeSlotLabel;
+
+            localStorage.setItem('date', date);
+            localStorage.setItem('timeSlot', timeSlot);
+            localStorage.setItem('timeSlotLabel', timeSlotLabel);
+        }
+
+        this.setState({date: localStorage.getItem('date')})
+        this.setState({timeSlotID: localStorage.getItem('timeSlot')})
+        this.setState({timeSlotLabel: localStorage.getItem('timeSlotLabel')})
+        this.setState({month: localStorage.getItem('month')})
+        this.setState({day: localStorage.getItem('day')})
     }
 
     submitBooking = (event) => {
@@ -38,7 +42,7 @@ export default class BookingForm extends React.Component {
                 name: this.state.name,
                 phone: this.state.phone
             },
-            timeSlotID: this.state.timeSlotID,
+            timeSlotID: parseInt(this.state.timeSlotID),
             date: this.state.date,
             description: this.state.description
         }
@@ -87,17 +91,14 @@ export default class BookingForm extends React.Component {
             "September", "October", 
             "November", "December"
         ];
-  
-        const month = appointmentTime.date.split('-')[1];
-        const day = appointmentTime.date.split('-')[2];
 
         return (
             <div className="BookingPageContainer">
                 <div className="wrapper">
                     <div className="AppointmentTime flexbox HeaderContainer">
                         <h2>YOUR APPOINTMENT</h2>
-                        <h4 style={{paddingRight: "5px"}}>{day}{this.appendDateSuffix(day)} {monthNames[month - 1]} at</h4>
-                        <h4 style={{paddingLeft: "0"}}>{appointmentTime.timeSlotLabel}</h4>
+                        <h4 style={{paddingRight: "5px"}}>{this.state.day}{this.appendDateSuffix(this.state.day)} {monthNames[this.state.month - 1]} at</h4>
+                        <h4 style={{paddingLeft: "0"}}>{this.state.timeSlotLabel}</h4>
                     </div>
                     <div className="formContainer">
                         <form onSubmit={this.submitBooking}>
